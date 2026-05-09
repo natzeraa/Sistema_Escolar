@@ -4,11 +4,11 @@ import java.time.LocalDate;
 
 public class Aluno {
     private int id;
-    private  String nome;
-    private  String cpf;
-    private  String email;
+    private String nome;
+    private String cpf;
+    private String email;
     private LocalDate data_nascimento;
-    private  String telefone;
+    private String telefone;
 
     // Construtor para CRIAR um novo aluno
     public Aluno(String nome, String cpf, String email, LocalDate data_nascimento, String telefone) {
@@ -78,9 +78,9 @@ public class Aluno {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return String.format(
-                "Aluno: id%d - nome=%s - cpf=%s - email=%s - nascimento=%s - telefone=%s",
+                "Aluno: Id %d - Nome = %s - CPF = %s - Email = %s - Nascimento = %s - Telefone = %s",
                 id, nome, cpf, email, data_nascimento, telefone
         );
     }

@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.sql.Connection;
 
 public class sqlConn {
-    private static final String url = "jdbc:mysql://localhost:3306/?sistema_escolar";
+    private static final String url = "jdbc:mysql://localhost:3306/sistema_escolar";
     private static final String user = "root";
     private static final String password = "Senai@134";
 
@@ -23,7 +23,7 @@ public class sqlConn {
             System.out.println("Verifique: ");
             System.out.println("1. MySql está rodando:" + e.getMessage());
             System.out.println("2. O banco " + url + " realmente existe");
-            System.out.println("3. O usuário ou senha estão corretos" + e.getMessage());
+            System.out.println("3. O usuário ou senha estão corretos " + e.getMessage());
         }
     }
 }
