@@ -17,13 +17,20 @@ public class AlunoDAOImplements implements IAlunoDAO {
 
         try (Connection conn = sqlConn.getConnection()) {
 
-            PreparedStatement stmt = conn.prepareStatement(sql);
+            PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             stmt.setString(1, aluno.getNome());
             stmt.setString(2, aluno.getCpf());
             stmt.setString(3, aluno.getEmail());
             stmt.setDate(4, Date.valueOf(aluno.getData_nascimento()));
             stmt.setString(5, aluno.getTelefone());
+
+            ResultSet chavePk = stmt.getGeneratedKeys();
+
+            if(chavePk.next())
+            {
+                aluno.setId((chavePk.getInt(1)));
+            }
 
             stmt.executeUpdate();
 
